@@ -1,0 +1,534 @@
+/*
+ *
+ * CSS written based on SMACSS architecture.
+ * To learn more, visit: http://smacss.com/
+ * 
+ * For simplicity, no reset or normalize is added. 
+ * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
+ *
+*/
+
+
+/* ---- Base Rules ---- */
+body {
+    background: rgb(136,203,171);
+    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: #fff;
+    text-align: center;
+}
+
+/* Typeography General*/
+h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 3em;
+    margin: 2em 1rem;
+}
+
+@media only screen and (min-width: 35em) {
+    h1 {
+        font-size: 6em;
+        margin: 2em 4rem 1em;
+    }
+}
+
+h2 {
+    border-bottom: 1px solid #cc1;
+    font-family: 'Oxygen', Sans-Serif;
+    font-size: 3em;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+h3 {
+    text-transform: capitalize;
+}
+
+p {
+    line-height: 1.6em;
+    color: #eee;
+}
+
+button {
+    cursor: pointer;
+    font-weight: 600;
+    z-index: 5;
+    border: none;
+    text-align: center;
+    outline: none;
+    display: block;
+    text-transform: uppercase;
+    border-radius: 0.2em;
+}
+
+button:hover {
+    box-shadow: 0em 0em 0.4em 0.3em #406A7790;
+    transition: ease 0.3s all;
+}
+
+button:active {
+    box-shadow: 0em 0em 0.1em 0.3em #406A77;
+    transition: ease 0.5s all;
+}
+
+input:hover, input:focus, #txt__area:hover,#txt__area:focus {
+    box-shadow: 0em 0em 0.5em 0.2em #BAE1EF70;
+    transition: ease 0.3s all;
+}
+
+input:active, #txt__area:active {
+    box-shadow: 0em 0em 0.3em 0.2em #BAE1EF;
+    transition: ease 0.01s all;
+}
+
+/* ---- Layout Rules ---- */
+main {
+    margin: 10vh 1em 10vh;
+}
+
+.main-hero {
+    min-height: 40vh;
+    padding-top: 3em;
+}
+
+section {
+    position: relative;
+    min-height: 80vh;
+}
+
+.hide {
+    display: none;
+}
+
+
+/* ---- Module Rules ---- */
+.grid__cls {
+    display: grid;
+}
+/* Slide Styles*/
+.page__slide {
+    height: 20em;
+    background-color: inherit;
+    background-image: url("../images/main1.png");
+    -webkit-background-size: cover;
+ /* Css 3 */
+    -moz-background-size: cover;
+ /* Css 3 */
+    -o-background-size: cover;
+ /* Css 3 */
+    background-size: cover;
+ /* Css 3 */
+}
+
+/* Navigation Styles*/
+.topnav {
+    overflow: hidden;
+    background-color: #2A85BA;
+}
+
+.topnav li a,.topnav li {
+    text-decoration: none;
+}
+
+.topnav li {
+    float: left;
+    display: block;
+    cursor: pointer;
+    text-align: left;
+}
+
+.topnav li:not(:last-child) {
+    margin: 0.4em 0.1em;
+    padding: 0.3em 0em;
+}
+
+.topnav li .menu__link {
+    color: #f2f2f2;
+    font-size: 1.2em;
+    color: #f2f2f2;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5em 1em;
+}
+
+.topnav .menu__link:hover {
+    background-color: #005E89;
+    color: #E8E8E8;
+    box-shadow: 0em 0em 0.4em 0.3em #88E1FC90;
+    transition: ease 0.2s all;
+    cursor: pointer;
+}
+
+.topnav a.menu__link__focus {
+    background-color: #ddd;
+    color: black;
+    transition: ease 0.1s all;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 660px) {
+    .topnav li {
+        display: none;
+    }
+
+    .topnav li.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .topnav.responsive {
+        position: relative;
+        background-color: #2A85BA60;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive li:not(:last-child) {
+        float: none;
+        display: block;
+        text-align: left;
+        margin: 0em 0em;
+    }
+
+    .topnav.responsive li:not(:last-child) .menu__link {
+        font-size: 0.8em;
+    }
+}
+
+/* Header Styles */
+.page__header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    display: none;
+}
+
+.page__header button {
+    background-color: #518BC1;
+    color: #fff;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    width: 4em;
+    height: 4em;
+    display: none;
+}
+
+@media screen and (max-width: 250px) {
+    .page__header button {
+        width: 4.5em;
+        height: 4.5em;
+        font-size: 0.5em;
+        border-radius: 0.1em;
+    }
+}
+/* Sec 1 Styles */
+@media screen and (max-width: 660px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    #section1.grid__cls, #section1.grid__cls div, #section2.grid__cls, #section3.grid__cls, #section4.grid__cls {
+        grid-template-columns: 1fr;
+        font-size: 0.9em;
+    }
+
+    #section1 h2, #section2 h2, #section3 h2, #section4 h2 {
+        font-size: 2em;
+    }
+
+    #section1 h3, #section2 h3, #section3 h3, #section4 h3 {
+        font-size: 1em;
+    }
+}
+
+#section1 {
+    grid-template-columns: 2fr 3fr;
+}
+
+#section1 .my___worke {
+    grid-template-columns: 1fr 1fr;
+}
+
+#section1 .my___worke > div {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+
+#section1 > div img {
+    width: 100%;
+}
+
+#section1 > div .my___worke img {
+    width: 80%;
+}
+/* Sec 2 Styles */
+
+#section2 div.technique {
+    margin-top: 15%;
+    text-transform: uppercase;
+}
+
+#section2 div.technique div {
+    background-color: #f2f2f2;
+    border-radius: 0.5em;
+    margin-bottom: 10%;
+}
+
+#section2 div.technique div span {
+    font-weight: bold;
+    color: #fff;
+    padding: 3% 0%;
+    text-align: right;
+    display: block;
+    background-color: #015cea;
+    border-radius: 0.5em;
+    max-width: 100%;
+    min-width: 0%;
+}
+
+/* Sec 3 Styles */
+#section3 .ourwork {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#section3 .ourwork > div {
+    margin: 1em;
+}
+
+#section3 .ourwork > div img {
+    width: 100%;
+    border-radius: 0.5em;
+}
+
+/* Sec 4 Styles */
+#section4 div.landing__container h2 {
+    color: #fff;
+}
+
+#section4 div.landing__container span:first-of-type {
+    padding-right: 80px;
+}
+
+#section4 div.landing__container span {
+    color: #fff;
+    padding-right: 70px;
+}
+
+#section4 #contact__text {
+    margin-top: 15%;
+}
+
+#section4 #contact__text label {
+    display: block;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+#section4 #contact__text input {
+    display: block;
+    height: 39px;
+}
+
+#section4 #contact__text input, #section4 #contact__text #txt__area {
+    background-color: #2135731f;
+    width: 100%;
+    color: #fff;
+    font-size: 23px;
+    margin: 20px 0;
+    padding: 2%;
+    outline: none;
+    border: none;
+    border-radius: 0.2em;
+}
+
+#section4 #contact__text #txt__area {
+    height: 200px;
+    max-height: 300px;
+    max-width: 100%;
+    overflow: auto;
+}
+
+#section4 #contact__text button {
+    background-color: #191e21;
+    color: #fff;
+    width: 9em;
+    height: 3em;
+}
+
+/* Common Styles */
+#section2, #section4 {
+    grid-template-columns: 1fr 1fr;
+}
+/* Start Footer Styles */
+.page__footer {
+    padding: 3% 0%;
+    ;text-align: center;
+    background-color: #191e21;
+}
+
+.page__footer p {
+    font-size: medium;
+    text-transform: uppercase;
+    color: #919191;
+    margin: 20px;
+}
+
+.page__footer ul {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    list-style: none;
+    padding-left: 0%;
+    width: 30%;
+    margin: auto;
+}
+
+.page__footer ul li {
+    display: block;
+    padding: 0%;
+    padding-right: 5px;
+}
+
+.page__footer ul li img {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 100%;
+    border: 1px solid #191e21;
+}
+
+.page__footer ul li img:hover {
+    background: #fff;
+    border-color: #fff;
+    transition: ease 0.7s all;
+}
+
+.page__footer ul li img:active {
+    background: none;
+    border-color: #191e21;
+    transition: ease 0.3s all;
+}
+
+/* ---- Theme Rules ---- */
+/* Landing Container Styles */
+.landing__container {
+    padding: 1em;
+    text-align: left;
+}
+
+@media only screen and (min-width: 35em) {
+    .landing__container {
+        max-width: 50em;
+        padding: 4em;
+    }
+}
+
+/*section:nth-of-type(even) .landing__container {
+    margin-right: 0;
+    margin-left: auto;
+    text-align: right;
+}*/
+
+/* Background Circles */
+/* Note that background circles are created with psuedo elements before and after */
+/* Circles appear to be random do to use of :nth-of-type psuedo class */
+section:nth-of-type(odd) .landing__container::before {
+    content: '';
+    background: rgba(255, 255, 255, 0.187);
+    position: absolute;
+    z-index: -5;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+section:nth-of-type(even) .landing__container::before {
+    content: '';
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    position: absolute;
+    top: 3em;
+    right: 3em;
+    z-index: -5;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n) .landing__container::after {
+    content: '';
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -5;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n + 1) .landing__container::after {
+    content: '';
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    position: absolute;
+    right: 20vw;
+    bottom: -5em;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+
+/* ---- Theme State Rules ---- */
+/* Section Active Styles */
+/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+section.your-active-class {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+    box-shadow: 0em 0em 2em 0.1em #B0E2FD8A;
+}
+
+section.your-active-class .landing__container::before {
+    opacity: 1;
+    animation: rotate 4s linear 0s infinite forwards;
+}
+
+section.your-active-class .landing__container::after {
+    opacity: 1;
+    animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+                   translate(-1em)
+                   rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg)
+                   translate(-1em) 
+                   rotate(-360deg);
+    }
+}
